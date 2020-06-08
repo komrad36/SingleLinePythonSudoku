@@ -5,7 +5,7 @@ Input as a flat list of 81 ints. Use 0 for empty cells.
 
 Returns 0 for no solution. For puzzles with multiple possible solutions, returns one of them.
 
-Requires Python 3.8.
+Requires Python 3.8 or above.
 
 ```
 f=lambda s:s if all(s)else next((x for a,i in min(([(z,i)for z in set(range(10))-set(s[i-i%9:][:9]+s[i%9::9]+sum((s[i-i%27+i%9-i%3+g:][:3]for g in(0,9,18)),[]))]for i in range(81)if s[i]<1),key=lambda x:len(x))if(x:=f(s[:i]+[a]+s[i+1:]))),0)
